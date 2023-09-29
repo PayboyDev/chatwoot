@@ -1,0 +1,18 @@
+first_thing:
+  - target: rails
+    apply_during: build_only
+    execute: true
+    sudo: true
+    inline: |
+      #!/usr/bin/env bash
+      echo "Installing plugins"
+      apt -y install glances htop
+      echo "Plugins installation complete!"
+after_symlink:
+  - target: rails
+    execute: true
+    apply_during: build_only
+    inline: |
+      #!/usr/bin/env bash
+      echo "Preparing database and running migration"
+      bundle exec rails db:chatwoot_prepare

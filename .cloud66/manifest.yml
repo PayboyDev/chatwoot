@@ -1,0 +1,19 @@
+rails:
+  configuration:
+    operating_system: ubuntu2004
+    ruby_version: 3.2.2
+    bundler:
+      options:
+        without: ['development', 'test', 'custom']
+    memory_allocator: jemalloc
+    node_version: '20'
+    root_disk_size: 50
+    root_disk_type: ssd
+    health_check: default
+load_balancer:
+  configuration:
+    httpchk: /app/login
+postgresql:
+  server: external
+redis:
+  server: external
