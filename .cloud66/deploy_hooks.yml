@@ -14,5 +14,6 @@ after_symlink:
     apply_during: build_only
     inline: |
       #!/usr/bin/env bash
+      cd $STACK_PATH
       echo "Preparing database and running migration"
       bundle exec rails db:chatwoot_prepare
