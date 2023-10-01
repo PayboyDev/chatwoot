@@ -11,7 +11,7 @@ first_thing:
 after_symlink:
   - target: rails
     execute: true
-    apply_during: build_only
+    apply_during: all
     inline: |
       #!/usr/bin/env bash
       cd $STACK_PATH
